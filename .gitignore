@@ -1,0 +1,18 @@
+# Dependencies
+server/node_modules/
+
+# Uploads and generated files
+server/uploads/
+uploads/
+
+# Environment
+.env
+
+# OS / editors
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*

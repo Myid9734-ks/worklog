@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>업무 관리</title>
+    <link rel="stylesheet" href="/styles.css?v=2" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <h2>✨ 새 업무 등록</h2>
+        <form id="create-form" class="grid">
+          <input type="text" id="title" placeholder="업무 제목" required />
+          <input type="date" id="task_date" required />
+          <select id="status">
+            <option value="doing" selected>진행중</option>
+            <option value="todo">예정</option>
+          </select>
+          <input type="file" id="image" accept="image/*" multiple />
+          <div id="image_preview" class="thumb"></div>
+          <textarea id="note" placeholder="메모"></textarea>
+          <button class="primary" type="submit">업무 등록</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>📚 조회 옵션 & 업무 목록</h2>
+        <div class="toolbar">
+          <div class="tabs">
+            <button data-view="day" class="tab active">일 뷰</button>
+            <button data-view="week" class="tab">주 뷰</button>
+            <button data-view="month" class="tab">월 뷰</button>
+          </div>
+          <div class="nav">
+            <button id="prev">◀</button>
+            <span id="current-label"></span>
+            <button id="next">▶</button>
+            <button id="today" class="ghost">오늘</button>
+          </div>
+        </div>
+
+        <div id="filters" class="filters">
+          <label><input type="checkbox" value="doing" checked /> 진행중</label>
+          <label><input type="checkbox" value="todo" checked /> 예정</label>
+          <label><input type="checkbox" value="done" checked /> 완료</label>
+        </div>
+
+        <div id="list" class="list"></div>
+      </section>
+    </main>
+    <button id="theme-toggle" class="theme-toggle" aria-label="테마 전환">🌞</button>
+    <div id="lightbox" class="lightbox"><img id="lightbox_img" alt="preview" /></div>
+    <script src="/app.js" defer></script>
+  </body>
+  </html>
